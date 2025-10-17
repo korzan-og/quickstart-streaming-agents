@@ -7,9 +7,8 @@ In this lab, we'll create a Retrieval-Augmented Generation (RAG) pipeline using 
 ## Prerequisites
 
 
-- Core infrastructure deployed on either AWS or Azure by running `uv run deploy` (see [main README](./README.md))
+- Run `uv run deploy` to deploy core infrastructure (see [main README](./README.md))
 - MongoDB free account with Atlas cluster (M0 - Free Tier) with vector search enabled - directions below.
-- ⚠️ **IMPORTANT: For AWS Users: [Request access to Claude Sonnet 3.7 in Bedrock for your cloud region](https://console.aws.amazon.com/bedrock/home#/modelaccess)**. If you do not activate it, the LLM calls in this lab will not work. ⚠️
 
 ## MongoDB Atlas Setup
 <details>
@@ -127,8 +126,7 @@ uv run deploy
 <summary>Manual alternative: Direct Python execution</summary>
 
 ```bash
-pip install -r requirements.txt
-python deploy.py
+pip install . && python deploy.py
 ```
 
 </details>
@@ -227,7 +225,7 @@ SELECT query, response FROM search_results_response LIMIT 5;
 ```bash
 # If publish_docs.py fails
 ✗ Missing required dependencies!
-→ Run: uv pip install -r requirements.txt
+→ Run: pip install .
 
 ✗ Terraform state not found!
 → Ensure you ran terraform apply successfully

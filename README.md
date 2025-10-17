@@ -44,12 +44,11 @@ That's it! The script will guide you through setup, automatically create API key
 **Required tools:**
 
 - **uv** - `brew install uv` (Mac) or `winget install astral-sh.uv` (Windows)
-- **Docker** - for data generation
+- **Python 3.8+**
 - **Terraform** - infrastructure deployment
+- **AWS CLI** or **Azure CLI**
 - **Confluent CLI** - cloud resource management
-- **AWS CLI** or **Azure CLI** - choose your cloud provider
-  - ***\*⚠️ AWS users:\**** [Enable Claude Sonnet 3.7 in Bedrock](https://console.aws.amazon.com/bedrock/home#/modelaccess) in your specific region before deploying.
-
+- **Docker** - for Lab1 data generation
 
 <details>
 <summary>📦 Platform-specific installation commands</summary>
@@ -78,9 +77,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 quickstart-streaming-agents/
 ├── aws|azure/               # Choose a cloud
-│   ├── core/                # Shared infrastructure
-│   ├── lab1-tool-calling/  
-│   └── lab2-vector-search/ 
+│   ├── core/                # Shared Terraform infrastructure
+│   ├── lab1-tool-calling/   # Lab-specific infra
+│   └── lab2-vector-search/  # Lab-specific infra
 ├── deploy.py                # 🚀 Start here
 └── scripts/                 # Python utilities
 ```
@@ -90,8 +89,7 @@ quickstart-streaming-agents/
 
 **Traditional Python:**
 ```bash
-pip install -r requirements.txt
-python deploy.py
+pip install -e . && python deploy.py
 ```
 
 </details>
@@ -101,7 +99,7 @@ python deploy.py
 
 ### Prerequisites
 - All tools installed and authenticated
-- Confluent Cloud account with API keys
+- Confluent Cloud API keys (Cloud Resource Management keys with EnvironmentAdmin role)
 
 ### Deploy
 ```bash
@@ -116,24 +114,24 @@ terraform init && terraform apply --auto-approve
 ```hcl
 prefix = "streaming-agents"
 cloud_provider = "aws"  # or "azure"
-cloud_region = "your-region"
+cloud_region = "your-region"  # must be a region supported by MongoDB free tier, otherwise Lab2 deployment will not succeed
 confluent_cloud_api_key = "your-key"
 confluent_cloud_api_secret = "your-secret"
 ZAPIER_SSE_ENDPOINT = "https://mcp.zapier.com/api/mcp/s/your-key/sse"  # Lab1
 MONGODB_CONNECTION_STRING = "mongodb+srv://cluster0.abc.mongodb.net"  # Lab2
 mongodb_username = "your-db-user"  # Lab2
-mongodb_password = "your-db-pass"  # Lab2  # pragma: allowlist secret
+mongodb_password = "your-db-pass"  # Lab2
 ```
 
+### Tear down
+```bash
+cd aws/lab1-tool-calling && terraform destroy --auto-approve
+cd ../core && terraform destroy --auto-approve
+```
 </details>
 
 ## Cleanup
-
 ```bash
 # Automated
-uv run deploy  # Choose cleanup option
-
-# Manual
-cd aws/lab1-tool-calling && terraform destroy --auto-approve
-cd ../core && terraform destroy --auto-approve
+uv run destroy
 ```
