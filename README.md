@@ -1,6 +1,11 @@
 # Streaming Agents on Confluent Cloud Quickstart
 
+[![Sign up for Confluent Cloud](https://img.shields.io/badge/Sign%20up%20for%20Confluent%20Cloud-007BFF?style=for-the-badge&logo=apachekafka&logoColor=white)](https://www.confluent.io/get-started/?utm_campaign=tm.pmm_cd.q4fy25-quickstart-streaming-agents&utm_source=github&utm_medium=demo)
+
 ![Streaming Agents Intro Slide](./assets/streaming-agents-intro-slide.png)
+
+
+
 
 Build real-time AI agents with [Confluent Cloud Streaming Agents](https://docs.confluent.io/cloud/current/ai/streaming-agents/overview.html). This quickstart includes two hands-on labs:
 
@@ -37,31 +42,33 @@ That's it! The script will guide you through setup, automatically create API key
 
 **Required accounts & credentials:**
 
-- [![Sign up for Confluent Cloud](https://img.shields.io/badge/Sign%20up%20for%20Confluent%20Cloud-007BFF?style=for-the-badge&logo=apachekafka&logoColor=white)](https://confluent.cloud/signup)
+- [![Sign up for Confluent Cloud](https://img.shields.io/badge/Sign%20up%20for%20Confluent%20Cloud-007BFF?style=for-the-badge&logo=apachekafka&logoColor=white)](https://www.confluent.io/get-started/?utm_campaign=tm.pmm_cd.q4fy25-quickstart-streaming-agents&utm_source=github&utm_medium=demo)
 - **Lab1:** Zapier account + SSE endpoint URL → [Setup guide](./LAB1-Walkthrough.md#zapier-mcp-server-setup)
 - **Lab2:** MongoDB Atlas + connection string, database-specific user credentials → [Setup guide](./LAB2-Walkthrough.md#mongodb-atlas-setup)
 
 **Required tools:**
 
-- **uv** - `brew install uv` (Mac) or `winget install astral-sh.uv` (Windows)
-- **Python 3.8+**
-- **Terraform** - infrastructure deployment
-- **AWS CLI** or **Azure CLI**
-- **Confluent CLI** - cloud resource management
-- **Docker** - for Lab1 data generation
+- **[uv](https://github.com/astral-sh/uv)**
+- **[Python 3.8+](https://github.com/python/cpython)**
+- **[Terraform](https://github.com/hashicorp/terraform)** - infrastructure deployment
+- **[AWS CLI](https://github.com/aws/aws-cli)** or **[Azure CLI](https://github.com/Azure/azure-cli)**
+- **[Confluent CLI](https://docs.confluent.io/confluent-cli/current/overview.html)** - cloud resource management
+- **[Docker](https://github.com/docker)** - for Lab1 data generation
+- **[librdkafka](https://github.com/confluentinc/librdkafka)**
 
 <details>
 <summary>📦 Platform-specific installation commands</summary>
 
 **Mac:**
 ```bash
-brew install uv git && brew tap hashicorp/tap && brew install hashicorp/tap/terraform && brew install --cask confluent-cli docker-desktop  && brew install awscli  # or azure-cli
+brew install uv git && brew tap hashicorp/tap && brew install hashicorp/tap/terraform && brew install --cask confluent-cli docker-desktop && brew install librdkafka && brew install awscli  # or azure-cli
 ```
 
 **Windows:**
 ```powershell
 winget install astral-sh.uv Git.Git Docker.DockerDesktop Hashicorp.Terraform ConfluentInc.Confluent-CLI Amazon.AWSCLI  # or Microsoft.AzureCLI
 ```
+> **Note:** librdkafka is bundled with confluent-kafka Python wheels on Windows - no separate installation needed.
 
 **Linux:**
 ```bash
