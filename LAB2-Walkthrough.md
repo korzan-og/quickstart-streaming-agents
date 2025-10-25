@@ -220,12 +220,11 @@ Example:
 
 ![](/assets/lab1/email.png)
 
-2) Schema output for the "documents" data product. Please copy/paste the schema to the given input in the form. For more information on how to work with data products please refer to ([Confluent Cloud Documents](https://docs.confluent.io/cloud/current/stream-governance/index.html))
+2) Schema output for the "documents" data product. Please copy/paste the schema as an input to the form below. For more information on how to get the relevant information with data products please refer to ([Confluent Cloud Documents](https://docs.confluent.io/cloud/current/stream-governance/index.html))
 
 **You have to submit these 2 requirements shot to the below link**
 
 ([Submit your Streaming Agents Task](https://forms.gle/R9GykZPZpLHA99rt9))
-
 
 
 ## Navigation
