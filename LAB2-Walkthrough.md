@@ -7,7 +7,7 @@ In this lab, we'll create a Retrieval-Augmented Generation (RAG) pipeline using 
 ## Prerequisites
 
 
-- Run `uv run deploy` to deploy core infrastructure (see [main README](./README.md))
+- Complete the tasks to deploy core infrastructure (see [main README](./README.md))
 - MongoDB free account with Atlas cluster (M0 - Free Tier) with vector search enabled - directions below.
 
 ## MongoDB Atlas Setup
@@ -36,7 +36,7 @@ If running Lab2, set up a free MongoDB Atlas cluster:
 
 </details>
 
-#### 3. Choose the **Free Tier (M0).** Then choose your cloud provider (AWS or Azure) and region. Make sure this is the same region that your Confluent Cloud deployment is in. Click **Create Cluster.**
+#### 3. Choose the **Free Tier (M0).** Then choose your cloud provider as **AWS** and region as **us-east-1**. Unclick "preload sample dataset". Click **Create Cluster.**
 
 <details open>
 <summary>Click to collapse</summary>
@@ -90,7 +90,7 @@ If running Lab2, set up a free MongoDB Atlas cluster:
 
 </details>
 
-#### 9. Scroll down to the bottom and choose **JSON Editor.** Enter the following
+#### 9. Scroll down to the bottom and choose **JSON Editor.** Enter the following and click Next.
 
    ```json
    {
@@ -104,32 +104,6 @@ If running Lab2, set up a free MongoDB Atlas cluster:
      ]
    }
    ```
-
-<details open>
-<summary>Click to collapse</summary>
-
-<img src="./assets/lab2/mongodb/08_json_editor_config.png" alt="JSON Config" width="50%" />
-
-</details>
-
-</details>
-
-## Deployment
-
-Use the setup script and select "Lab2" when prompted to automatically deploy Lab2 infrastructure:
-
-```bash
-uv run deploy
-```
-
-<details>
-<summary>Manual alternative: Direct Python execution</summary>
-
-```bash
-pip install . && python deploy.py
-```
-
-</details>
 
 During deployment, you'll be prompted to provide 3 MongoDB variables:
 - `MONGODB_CONNECTION_STRING`: The connection URL from [Step 5](#step-1-create-mongodb-atlas-account-and-cluster) of MongoDB setup (e.g., `mongodb+srv://cluster0.abc123.mongodb.net`)
@@ -160,15 +134,6 @@ The lab uses real Confluent Flink documentation as the knowledge base:
 uv run publish_docs
 ```
 
-<details>
-<summary>Alternative: Using Python directly</summary>
-
-```bash
-python scripts/lab2_publish_docs.py
-```
-
-</details>
-
 This publishes pre-chunked Flink documentation that gets:
 1. **Embedded** using the LLM embedding model
 2. **Stored** in MongoDB Atlas with vector search index
@@ -181,16 +146,6 @@ This publishes pre-chunked Flink documentation that gets:
 uv run publish_queries # starts interactive mode (recommended), or:
 uv run publish_queries "How do I use window functions in Flink?"
 ```
-
-<details>
-<summary>Alternative: Using Python directly</summary>
-
-```bash
-python scripts/lab2_publish_queries.py # starts interactive mode, or:
-python scripts/lab2_publish_queries.py "How do I use window functions in Flink?"
-```
-
-</details>
 
 The vector search results can be found in the `search_results` table, and the RAG (retrieval-augmented generation) results can be found in the  `search_results_response` table. They contain:
 
@@ -253,29 +208,21 @@ SELECT COUNT(*) FROM search_results_response;  -- Final RAG responses
 </details>
 
 ## SUBMISSION
-* After completing the lab1, take screen shot of the below query.
+* After completing both labs, you need to submit 2 files for this challenge.
 
-```sql
--- View successful price matches
-SELECT 
-    order_id,
-    product_name,
-    order_price,
-    competitor_price,
-    (CAST(order_price AS DECIMAL(10,2)) - CAST(competitor_price AS DECIMAL(10,2))) as savings
-FROM price_match_email_results;
-```
+* Please enter the same name, surname and email address with previous challenge.
+
+1) Take screen shot of the email you've received for price match. The screenshot should include, subject, whole body and time when it is received.
+
 Your screen shot should be identical to this example:
 
-![](/assets/lab1/savingsquery.png)
+![](/assets/lab1/emailexample.png)
 
-Your screen shot must include an example data for query order_id, product_name, order_price, competitor_price and savings. The return values must be visible but the value is not important. For full points you need a similar screen shot as below.
+2) Schema output for the "documents" data product. Please copy/paste the schema to the given input in the form.
 
-![](result_preview.png)
+**You have to submit these 2 requirements shot to the below link**
 
-**You have to submit that screen shot to the below link**
-
-([Submit your F1 Leaderboard Data](https://forms.gle/mhFZHjnwCEytKjjF6))
+([Submit your Streaming Agents Task](https://forms.gle/R9GykZPZpLHA99rt9))
 
 
 
