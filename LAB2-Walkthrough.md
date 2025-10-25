@@ -216,7 +216,7 @@ SELECT COUNT(*) FROM search_results_response;  -- Final RAG responses
 
 1) Take screen shot of the email you've received for price match. The screenshot should include, subject, whole body and time when it is received.
 
-Your screen shot should be identical to this example:
+Example:
 
 ![](/assets/lab1/email.png)
 
