@@ -37,39 +37,39 @@ Build real-time AI agents with [Confluent Cloud Streaming Agents](https://docs.c
     <details open>
     - <summary>Zapier MCP Server Setup (Click to expand)</summary>
 
-Create a Zapier MCP server for tool calling:
+        Create a Zapier MCP server for tool calling:
 
-### 1. Create free Zapier Account
+        ### 1. Create free Zapier Account
 
-Sign up at [zapier.com](https://zapier.com/sign-up) and verify your email.
+        Sign up at [zapier.com](https://zapier.com/sign-up) and verify your email.
 
-### 2. Create MCP Server
+        ### 2. Create MCP Server
 
-Visit [mcp.zapier.com](https://mcp.zapier.com/mcp/servers), choose "Other" as MCP Client, and create your server.
-
-
-<img src="./assets/lab1/zapier/3.png" alt="Create MCP Server" width="50%" />
+        Visit [mcp.zapier.com](https://mcp.zapier.com/mcp/servers), choose "Other" as MCP Client, and create your server.
 
 
-### 3. Add Tools
-
-Add these tools to your MCP server:
-
-- **Webhooks by Zapier: GET** tool
-- **Gmail: Send Email** tool (authenticate via SSO)
+        <img src="./assets/lab1/zapier/3.png" alt="Create MCP Server" width="50%" />
 
 
-<img src="./assets/lab1/zapier/4.png" alt="Add Tools" width="50%" />
+        ### 3. Add Tools
+
+        Add these tools to your MCP server:
+
+        - **Webhooks by Zapier: GET** tool
+        - **Gmail: Send Email** tool (authenticate via SSO)
 
 
-### 4. Get SSE Endpoint URL
-
-Click **"Connect",** choose **"Other"** for your client, then change transport to **"SSE Endpoint"**, and **copy the URL.** This is the `ZAPIER_SSE_ENDPOINT` you will need to enter when deploying the lab with `uv run deploy`.
+        <img src="./assets/lab1/zapier/4.png" alt="Add Tools" width="50%" />
 
 
-<img src="./assets/lab1/zapier/7.png" alt="SSE Endpoint" width="50%" />
+        ### 4. Get SSE Endpoint URL
 
-</details>
+        Click **"Connect",** choose **"Other"** for your client, then change transport to **"SSE Endpoint"**, and **copy the URL.** This is the `ZAPIER_SSE_ENDPOINT` you will need to enter when deploying the lab with `uv run deploy`.
+
+
+        <img src="./assets/lab1/zapier/7.png" alt="SSE Endpoint" width="50%" />
+
+    </details>
 
 
 - **Lab2:** MongoDB Atlas + connection string, database-specific user credentials 
