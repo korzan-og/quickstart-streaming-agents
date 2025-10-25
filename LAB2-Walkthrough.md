@@ -10,6 +10,109 @@ In this lab, we'll create a Retrieval-Augmented Generation (RAG) pipeline using 
 - Run `uv run deploy` to deploy core infrastructure (see [main README](./README.md))
 - MongoDB free account with Atlas cluster (M0 - Free Tier) with vector search enabled - directions below.
 
+## MongoDB Atlas Setup
+<details>
+<summary>MongoDB Atlas Setup (Click to expand)</summary>
+
+### Step 1: Create MongoDB Atlas Account and Cluster
+
+If running Lab2, set up a free MongoDB Atlas cluster:
+
+#### 1. Create a **Project.**
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/01_create_project.png" alt="Create Project" width="50%" />
+
+</details>
+
+#### 2. Create a **Cluster.**
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/02_create_cluster.png" alt="Create Cluster" width="50%" />
+
+</details>
+
+#### 3. Choose the **Free Tier (M0).** Then choose your cloud provider (AWS or Azure) and region. Make sure this is the same region that your Confluent Cloud deployment is in. Click **Create Cluster.**
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/03_choose_free_tier_and_region.png" alt="Choose Free Tier" width="50%" />
+
+</details>
+
+#### 4. **Create a Database User.** **Write down the username and password** you choose, as they will be `mongodb_username` and `mongodb_password` that you will need to deploy Terraform later. Click **Create Database User** when you are done
+
+   **Note:** the username and password you set up to access your database are the credentials you'll need to save for later, NOT the separate login you use for mongodb.com.
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/04_create_database_user.png" alt="Create Database User" width="50%" />
+
+</details>
+
+#### 5. Click **Choose a Connection method.** => Shell => Copy the URL shown in **step 2.** This is the `MONGODB_CONNECTION_URL` you will need later. Don't worry about the rest of the command - you only need the URL that looks like `mongodb+srv://cluster0.xhgx1kr.mongodb.net`
+
+#### 6. Go to **Network Access** in left sidebar. Click green **Add IP Address** button on the right. Then simply click the **Allow Access From Anywhere** button, or manually enter `0.0.0.0/0`. Click **Confirm.**
+
+ ⚠️ **NOTE:** Important step! Confluent Cloud will not be able to connect to MongoDB without this rule. ⚠️
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/05_network_access_allow_all.png" alt="Network Access" width="50%" />
+
+</details>
+
+#### 7. Next, from **Clusters** page, choose "Atlas Search" then click **Add my own data.** Enter
+
+   Database name: `vector_search`
+
+   Collection name: `documents`
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/06_add_data_collection.png" alt="Add Data Collection" width="50%" />
+
+</details>
+
+#### 8. Next, click **Create Search Index.** Choose **Vector Search index, and name it `vector_search`
+
+<details open>
+<summary>Click to collapse</summary>
+<img src="./assets/lab2/mongodb/07_create_vector_search_index.png" alt="Create Vector Index" width="50%" />
+
+</details>
+
+#### 9. Scroll down to the bottom and choose **JSON Editor.** Enter the following
+
+   ```json
+   {
+     "fields": [
+       {
+         "type": "vector",
+         "path": "embedding",
+         "numDimensions": 1536,
+         "similarity": "cosine"
+       }
+     ]
+   }
+   ```
+
+<details open>
+<summary>Click to collapse</summary>
+
+<img src="./assets/lab2/mongodb/08_json_editor_config.png" alt="JSON Config" width="50%" />
+
+</details>
+
+</details>
 
 ## Deployment
 
