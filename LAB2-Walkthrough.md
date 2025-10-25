@@ -224,7 +224,7 @@ Example:
 
 **You have to submit these 2 requirements shot to the below link**
 
-([Submit your Streaming Agents Task](https://forms.gle/R9GykZPZpLHA99rt9))
+([Submit Your Outputs for Challenge 2](https://form.jotform.com/252976717237368))
 
 
 ## Navigation
