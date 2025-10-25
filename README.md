@@ -62,7 +62,7 @@ pip install -e .
 python deploy.py
 ```
 
-That's it! The script will guide you through setup, automatically create API keys, and deploy your chosen lab(s).
+That's it! The script will guide you through setup, automatically create API keys. Ensure you deploy **all 3 labs** .
 
 ## Cleanup
 ```bash
