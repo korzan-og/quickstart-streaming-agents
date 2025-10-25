@@ -38,7 +38,9 @@ Build real-time AI agents with [Confluent Cloud Streaming Agents](https://docs.c
 
 ## 🚀 Quick Start
 
-Before you begin, ensure you are connected to the EC2 machine. If you are not, you can connect to the machine by typing below command:
+Before you begin, ensure you completed prerequisites for Zapier and MongoDB.
+
+* Ensure you are connected to the EC2 machine. If you are not, you can connect to the machine by typing below command:
 
 ```bash
 ssh -i ./<name of the pem file>.pem ubuntu@<PublicDNS>
