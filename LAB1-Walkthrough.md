@@ -14,7 +14,7 @@ This lab implements a three-agent pipeline:
 
 ## Prerequisites
 
-- Run `uv run deploy` to deploy core infrastructure (see [main README](./README.md))
+- Complete the tasks to deploy core infrastructure (see [main README](./README.md))
 - Zapier account and remote MCP server set up  (instructions below)
 
 ## Zapier MCP Server Setup
