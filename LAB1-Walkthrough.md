@@ -54,7 +54,7 @@ Add these tools to your MCP server:
 
 ### 4. Get SSE Endpoint URL
 
-Click **"Connect",** choose **"Other"** for your client, then change transport to **"SSE Endpoint"**, and **copy the URL.** This is the `ZAPIER_SSE_ENDPOINT` you will need to enter when deploying the lab with `uv run deploy`.
+Click **"Connect",** choose **"Other"** for your client, then change transport to **"SSE Endpoint"**, and **copy the URL.** This is the `ZAPIER_SSE_ENDPOINT` you will need to enter when deploying the lab`.
 
 <details open>
 <summary>Click to collapse</summary>
@@ -106,17 +106,6 @@ Make sure Docker is running, then begin generating data with the following comma
 ```bash
 uv run lab1_datagen
 ```
-
-<details>
-<summary>Alternative: Using Python directly</summary>
-
-```bash
-python scripts/lab1_datagen.py
-```
-
-The Python script provides the same automation as the uv version.
-
-</details>
 
 The data generator creates three interconnected data streams:
 
