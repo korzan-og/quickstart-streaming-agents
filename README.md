@@ -62,7 +62,11 @@ pip install -e .
 python deploy.py
 ```
 
-That's it! The script will guide you through setup, automatically create API keys. Ensure you deploy **all 3 labs** .
+That's it! The script will guide you through setup, automatically create API keys. 
+
+Ensure you deploy **all 3 labs** .
+
+Ensure you select **us-east-1** as your regions.
 
 ## Cleanup
 ```bash
