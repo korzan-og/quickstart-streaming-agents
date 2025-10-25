@@ -218,7 +218,7 @@ SELECT COUNT(*) FROM search_results_response;  -- Final RAG responses
 
 Your screen shot should be identical to this example:
 
-![](/assets/lab1/emailexample.png)
+![](/assets/lab1/email.png)
 
 2) Schema output for the "documents" data product. Please copy/paste the schema to the given input in the form.
 
