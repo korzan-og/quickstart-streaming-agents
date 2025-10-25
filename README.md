@@ -61,6 +61,21 @@ export AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
 export AWS_SECRET_ACCESS_KEY="<YOUR_AWS_SECRET_ACCESS_KEY>"
 export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
 ```
+* [Sign in to Confluent Cloud](https://confluent.cloud/auth_callback)
+
+* [Create an API key](https://docs.confluent.io/cloud/current/security/authenticate/workload-identities/service-accounts/api-keys/manage-api-keys.html#add-an-api-key).<br>
+         a. Navigate to the hamburger icon on top right corner and select **API Keys**.<br>
+         b. Click **Add API Key**.<br>
+         c. Select "My Account" and click "Next".<br>
+         d. Select **Cloud resource Management** and below this and click "Next".<br>
+         ![](/assets/apikey.png)
+         e. Add a name and a description and click "Next".<br>
+         f. Click "Download API Key" at the bottom beside Complete button and once downloaded, click "Complete"<br>
+         g. Modify below script with your values and run the commands.
+ ```bash
+    export CONFLUENT_CLOUD_API_KEY="<cloud_api_key>"
+    export CONFLUENT_CLOUD_API_SECRET="<cloud_api_secret>"
+```
 
 
 * **Run below commands to start the deployment:**
