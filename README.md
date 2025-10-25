@@ -53,6 +53,16 @@ git clone https://github.com/korzan-og/quickstart-streaming-agents.git
 cd quickstart-streaming-agents/
 ```
 
+* **Run AWS export commands that you coped from Workshop studio event. Ensure you have changed keys and tokens with your own values**
+
+```bash
+export AWS_DEFAULT_REGION="us-east-1"
+export AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
+export AWS_SECRET_ACCESS_KEY="<YOUR_AWS_SECRET_ACCESS_KEY>"
+export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
+```
+
+
 * **Run below commands to start the deployment:**
 
 ```bash
