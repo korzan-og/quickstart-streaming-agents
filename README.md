@@ -34,8 +34,8 @@ Build real-time AI agents with [Confluent Cloud Streaming Agents](https://docs.c
 
 - [![Sign up for Confluent Cloud](https://img.shields.io/badge/Sign%20up%20for%20Confluent%20Cloud-007BFF?style=for-the-badge&logo=apachekafka&logoColor=white)](https://www.confluent.io/get-started/?utm_campaign=tm.pmm_cd.q4fy25-quickstart-streaming-agents&utm_source=github&utm_medium=demo)
 - **Lab1:** Zapier account + SSE endpoint URL
-<details open>
-<summary> - Zapier MCP Server Setup (Click to expand)</summary>
+    <details open>
+    - <summary>Zapier MCP Server Setup (Click to expand)</summary>
 
 Create a Zapier MCP server for tool calling:
 
