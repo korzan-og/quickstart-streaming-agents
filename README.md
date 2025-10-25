@@ -71,7 +71,7 @@ export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
          ![](/assets/apikey.png)
          e. Add a name and a description and click "Next".<br>
          f. Click "Download API Key" at the bottom beside Complete button and once downloaded, click "Complete"<br>
-         g. Modify below script with your values and run the commands.
+         g. Modify below script and change <cloud_api_key> and <cloud_api_secret> with your values and run the commands.
  ```bash
     export CONFLUENT_CLOUD_API_KEY="<cloud_api_key>"
     export CONFLUENT_CLOUD_API_SECRET="<cloud_api_secret>"
