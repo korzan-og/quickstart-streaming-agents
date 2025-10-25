@@ -252,6 +252,33 @@ SELECT COUNT(*) FROM search_results_response;  -- Final RAG responses
 
 </details>
 
+## SUBMISSION
+* After completing the lab1, take screen shot of the below query.
+
+```sql
+-- View successful price matches
+SELECT 
+    order_id,
+    product_name,
+    order_price,
+    competitor_price,
+    (CAST(order_price AS DECIMAL(10,2)) - CAST(competitor_price AS DECIMAL(10,2))) as savings
+FROM price_match_email_results;
+```
+Your screen shot should be identical to this example:
+
+![](/assets/lab1/savingsquery.png)
+
+Your screen shot must include an example data for query order_id, product_name, order_price, competitor_price and savings. The return values must be visible but the value is not important. For full points you need a similar screen shot as below.
+
+![](result_preview.png)
+
+**You have to submit that screen shot to the below link**
+
+([Submit your F1 Leaderboard Data](https://forms.gle/mhFZHjnwCEytKjjF6))
+
+
+
 ## Navigation
 
 - **← Back to Overview**: [Main README](./README.md)

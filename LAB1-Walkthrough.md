@@ -299,6 +299,10 @@ FROM price_match_email_results;
 
 By chaining these agents together, we've built a real-time data pipeline that reacts to market changes in seconds, ensures pricing competitiveness, and delivers immediate value to customers—right in their inbox.
 
+## FOR SUBMISSION
+The submission for the game will be after Lab2.
+
+
 ## Navigation
 
 - **← Back to Overview**: [Main README](./README.md)
