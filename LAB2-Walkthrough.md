@@ -90,7 +90,7 @@ If running Lab2, set up a free MongoDB Atlas cluster:
 
 </details>
 
-#### 9. Scroll down to the bottom and choose **JSON Editor.** Enter the following and click Next.
+#### 9. Scroll down to the bottom and choose **JSON Editor.** Enter the following and click Next. Then click "Create Vector Search Index".
 
    ```json
    {
