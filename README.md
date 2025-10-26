@@ -97,7 +97,7 @@ That's it! The script will guide you through setup, automatically create API key
 
 - Ensure you select **us-east-1** as your regions.
 
-* When script fails deployment continue with Lab 1.
+* When script completes the deployment, continue with Lab 1.
 
 ## Cleanup
 
