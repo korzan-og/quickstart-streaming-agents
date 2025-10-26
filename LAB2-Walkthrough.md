@@ -129,6 +129,13 @@ This creates the complete RAG pipeline:
 
 ### Load Confluent Flink Documentation
 
+* Ensure you are connected to the EC2 machine and in the right folder. If you are not, you can connect to the machine by typing below command:
+
+```bash
+ssh -i ./<name of the pem file>.pem ubuntu@<PublicDNS>
+cd quickstart-streaming-agents/
+```
+
 The lab uses real Confluent Flink documentation as the knowledge base:
 
 ```bash
